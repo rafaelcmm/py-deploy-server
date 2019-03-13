@@ -3,7 +3,7 @@ import thread
 import webbrowser
 import time
 
-import BaseHTTPServer, SimpleHTTPServer
+from functions import *
 
 try:
     port = sys.argv[1]
@@ -11,16 +11,14 @@ except IndexError:
     port = 4004
 
 url = 'http://localhost:' + str(port)
+start_time = time.time()
 
-def start_server():
-    httpd = BaseHTTPServer.HTTPServer(('localhost', int(port)), SimpleHTTPServer.SimpleHTTPRequestHandler)
-    httpd.serve_forever()
-
-thread.start_new_thread(start_server,())
+thread.start_new_thread(start_server,(1,port))
 webbrowser.open_new(url)
 
 while True:
     try:
         time.sleep(1)
     except KeyboardInterrupt:
+        print("\n\nFinal execution time: %s seconds" % (get_time_diff_to_now(start_time)))
         sys.exit(0)
