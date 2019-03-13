@@ -1,0 +1,12 @@
+{
+  "name": "py-deploy-server",
+  "version": "1.0.0",
+  "description": "Simple HTTP server deploy in python",
+  "main": "index.js",
+  "author": "Rafael Carvalho Monteiro",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "serve": "./src/main.sh"
+  }
+}
