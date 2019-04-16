@@ -13,9 +13,7 @@ except IndexError:
 
 try:
     path = sys.argv[2]
-    print(path)
     os.chdir(path)
-    os.system('ls')
 except IndexError:
     print('No relative path provided. Calling in root...')
 
