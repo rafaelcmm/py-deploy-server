@@ -12,7 +12,7 @@ function success() {
   printf "\n${GREEN}%s${END}\n" "$*"
 }
 
-path_to_script=${PWD}
+path_to_script="${PWD}/${current_dir}"
 current_dir=$(dirname $0)
 
 if [[ "$parameters" = *"--path"* ]]; then
@@ -24,5 +24,5 @@ if [[ "$parameters" = *"--port"* ]]; then
 fi
 
 info "Opening python webserver..."
-python "${current_dir}/src/main.py" ${port}
+python "${path_to_script}/src/main.py" ${port}
 success "Done!"
