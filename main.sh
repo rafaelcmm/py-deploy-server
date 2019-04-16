@@ -12,11 +12,11 @@ function success() {
   printf "\n${GREEN}%s${END}\n" "$*"
 }
 
-path_to_script="${PWD}/${current_dir}"
 current_dir=$(dirname $0)
+port=4004
 
 if [[ "$parameters" = *"--path"* ]]; then
-  cd $(echo "$parameters" | ack -o "(?<=--path=).*?([^\s]+|$)")
+  relative_path=$(echo "$parameters" | ack -o "(?<=--path=).*?([^\s]+|$)")
 fi
 
 if [[ "$parameters" = *"--port"* ]]; then
@@ -24,5 +24,5 @@ if [[ "$parameters" = *"--port"* ]]; then
 fi
 
 info "Opening python webserver..."
-python "${path_to_script}/src/main.py" ${port}
+python "${current_dir}/src/main.py" ${port} ${relative_path}
 success "Done!"
