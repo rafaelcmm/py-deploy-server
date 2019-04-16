@@ -1,6 +1,6 @@
 {
   "name": "py-deploy-server",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple HTTP server deploy in python",
   "main": "index.js",
   "author": "Rafael Carvalho Monteiro",
