@@ -7,6 +7,6 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "serve": "./src/main.sh"
+    "serve": "./main.sh"
   }
 }

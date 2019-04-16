@@ -24,5 +24,5 @@ if [[ "$parameters" = *"--port"* ]]; then
 fi
 
 info "Opening python webserver..."
-python "${path_to_script}/${current_dir}/main.py" ${port}
+python "${current_dir}/src/main.py" ${port}
 success "Done!"
